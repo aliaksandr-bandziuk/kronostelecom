@@ -9,7 +9,7 @@
   background-color: #000;
 
   @media screen and (max-width: 768px) {
-    padding: 10px 0;
+    padding: 20px 0;
   }
 }
 
@@ -79,8 +79,6 @@
 }
 
 .menu__wrapper {
-  // display: flex;
-  // justify-content: space-between;
   align-items: center;
   gap: 20px;
   border-radius: 20px;
@@ -91,7 +89,7 @@
     background: transparent;
     padding: 0;
     border-radius: 0;
-    height: 60px;
+    // height: 60px;
   }
 
   &-scrolled {
