@@ -146,3 +146,27 @@
 		}
 	}
 }
+
+@mixin primaryHover {
+	background: rgb(0, 32, 91);
+	transition: all 0.3s ease-in-out;
+
+	@media screen and (min-width: 768px){
+    
+    &:hover {
+      background: rgb(0, 18, 51);
+    }
+  }
+}
+
+@mixin secondaryHover {
+	background: rgb(240, 63, 39);
+	transition: all 0.3s ease-in-out;
+
+	@media screen and (min-width: 768px){
+		
+		&:hover {
+			background: rgb(200, 50, 30);
+		}
+	}
+}
