@@ -14,7 +14,7 @@
 
 .header__menu {
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 1220px){
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -48,26 +48,9 @@
 
 .image-logo-block {
   width: 176px;
-  // flex: 0 0 150px;
 
-  @media (max-width: 768px) {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 460px){
-    max-width: 120px;
-  }
-
-  @media screen and (max-width: 365px){
-    max-width: 100px;
-  }
-
-  @media screen and (max-width: 345px){
-    max-width: 80px;
-  }
-
-  @media screen and (min-width: 768px){
-    flex: 0 0 176px;
+  @media screen and (min-width: 1024px){
+    flex: 0 0 143px;
   }
 }
 
@@ -82,13 +65,22 @@
   gap: 20px;
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 1fr 2.5fr;
+  grid-template-columns: 0.5fr auto 1fr;
+
+  @media (max-width: 1220px) {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    grid-template-columns: 0.5fr 1fr auto;
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     background: transparent;
     padding: 0;
     border-radius: 0;
-    // height: 60px;
+    // grid-template-columns: auto;
+    margin-right: auto;
   }
 
   &-scrolled {
@@ -104,7 +96,7 @@
   align-items: center;
   gap: clamp(0.625rem, -1.563rem + 8.75vw, 5rem);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1220px) {
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
@@ -127,9 +119,10 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    margin-left: auto;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1220px) {
     gap: 70px;
   }
 }
@@ -229,7 +222,7 @@
     text-decoration: underline;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1220px) {
     display: none;
   }
 }

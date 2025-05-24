@@ -4,7 +4,7 @@
 	}
 	// .menu__body
 	&__body {
-		@media (max-width: $mobile) {
+		@media (max-width: 1220px) {
 			position: fixed;
 			width: 100%;
 			height: 100%;
@@ -36,7 +36,7 @@
 	&__list {
 		display: flex;
 		gap: 30px;
-		@media (max-width: $mobile) {
+		@media (max-width: 1220px) {
 			flex-direction: column;
 			gap: 26px;
 		}
@@ -51,7 +51,7 @@
 			gap: 5px;
 			position: relative;
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 1220px) {
 				flex-direction: column;
 				align-items: start;
 			}
@@ -106,7 +106,7 @@
 .menu__arrow {
   transition: transform 0.3s ease; // добавляем анимацию поворота
 
-	@media screen and (max-width: 768px){
+	@media screen and (max-width: 1220px){
 		display: none;
 	}
 }
@@ -137,7 +137,7 @@
 //Burger Icon
 .icon-menu {
 	display: none;
-	@media (max-width: $mobile) {
+	@media (max-width: 1220px) {
 		display: block;
 		position: relative;
 		width: toRem(30);
