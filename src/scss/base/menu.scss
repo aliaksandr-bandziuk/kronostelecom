@@ -1,0 +1,186 @@
+.menu {
+	// .menu__icon
+	&__icon {
+	}
+	// .menu__body
+	&__body {
+		@media (max-width: $mobile) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			right: -100%;
+			top: 0;
+			overflow: auto;
+			padding: toRem(60) toRem(80) toRem(50) toRem(30);
+			transition: right 0.3s;
+			background: #00205B;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: toRem(70);
+				right: -100%;
+				top: 0;
+				transition: right 0.3s;
+				z-index: 2;
+			}
+			.menu-open & {
+				right: -15%;
+				&::before {
+					right: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		gap: 30px;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: 26px;
+		}
+	}
+	// .menu__item
+	&__item {
+		color: #fff;
+
+		&:has(.menu__sub-list) {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			position: relative;
+
+			@media screen and (max-width: 768px) {
+				flex-direction: column;
+				align-items: start;
+			}
+		}
+	}
+	// .menu__link
+	&__link {
+		color: rgb(255, 255, 255);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 150%;
+		text-align: left;
+		transition: all 0.3s ease;
+
+		@media screen and (min-width: 768px) {
+			
+			&:hover {
+				color: rgb(240, 63, 39);
+			}
+		}
+	}
+}
+
+.menu__sub-list {
+	position: absolute;
+	top: 35px;
+	left: 0;
+	background: rgb(0, 32, 91);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 15px;
+	display: none;
+	flex-direction: column;
+	gap: 10px;
+	border-radius: 10px;
+	transition: all 0.2s ease;
+	width: max-content;
+
+	@media screen and (max-width: 1024px){
+		display: flex;
+		background-color: inherit;
+		box-shadow: none;
+		position: static;
+		padding: 15px 10px;
+		width: unset;
+	}
+}
+
+.menu__sub-list--open {
+	display: flex;
+}
+
+.menu__arrow {
+  transition: transform 0.3s ease; // добавляем анимацию поворота
+
+	@media screen and (max-width: 768px){
+		display: none;
+	}
+}
+
+.menu__arrow--rotated {
+  transform: rotate(180deg); // поворот на 180 градусов
+}
+
+.menu__sub-list li {
+	// margin: 0px 0px 10px 0px;
+}
+.menu__sub-list li:last-child {
+	margin: 0;
+}
+.menu__sub-link {
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+
+	@media screen and (min-width: 768px) {
+			
+		&:hover {
+			color: rgb(240, 63, 39);
+		}
+	}
+}
+
+//Burger Icon
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #fff;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - toRem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
