@@ -1,1 +1,8 @@
-// Заголовки, загальні БЕМ блоки та інше...
+
+.main-title {
+  color: rgb(255, 255, 255);
+  font-size: clamp(1.5rem, 0.688rem + 3.25vw, 3.125rem);
+  font-weight: 700;
+  line-height: 120%;
+  text-transform: uppercase;
+}
