@@ -1,8 +1,36 @@
-
 .main-title {
   color: rgb(255, 255, 255);
   font-size: clamp(1.5rem, 0.688rem + 3.25vw, 3.125rem);
   font-weight: 700;
   line-height: 120%;
   text-transform: uppercase;
+}
+
+.h2-standard {
+  color: rgb(240, 63, 39);
+  font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.p-standard {
+  color: rgb(60, 60, 87);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-20 {
+  // 20 to 50 px
+  margin-bottom: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
+}
+
+.content-standard {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto;
 }

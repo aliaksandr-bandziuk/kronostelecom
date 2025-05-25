@@ -1,5 +1,6 @@
 .hero {
   position: relative;
+  margin-bottom: clamp(6.25rem, 4.688rem + 6.25vw, 9.375rem);
 }
 
 .hero-image {
