@@ -1,0 +1,286 @@
+.coverage-form {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+
+  &__input {
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: rgb(255, 255, 255);
+    font-size: clamp(0.75rem, 0.625rem + 0.5vw, 1rem);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+
+    &::placeholder {
+      font-size: clamp(0.75rem, 0.625rem + 0.5vw, 1rem);
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__clear-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 40px;
+    font-weight: 300;
+    color: rgb(164, 164, 164);
+    cursor: pointer;
+    display: none; /* по умолчанию скрыт */
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease;
+
+    @media screen and (min-width: 768px) {
+      
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  &__btn {
+    @include primaryHover;
+    padding: 10px 23px;
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+
+    @media screen and (min-width: 980px) {
+      width: 250px;
+      
+    }
+  }
+}
+
+.map-coverage__wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
+}
+
+.map-coverage {
+  height: 550px;
+}
+
+.leaflet-control-zoom-fullscreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.custom-fullscreen-button {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.custom-fullscreen-button img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.leaflet-control-zoom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: none;
+}
+
+.leaflet-touch .leaflet-bar a {
+  width: 35px;
+  height: 35px;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: rgb(60, 60, 87);
+  }
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: rgb(60, 60, 87);
+  }
+}
+
+.leaflet-left {
+  left: unset;
+  right: 20px;
+}
+
+.leaflet-top {
+  top: unset;
+  bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    bottom: unset;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.leaflet-popup-content p {
+  margin: unset;
+}
+
+.leaflet-container a {
+  color: unset;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 30px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-popup-content {
+  margin: unset;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  top: 5px;
+  right: 10px;
+  font-size: 30px;
+}
+
+#tariff-info {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.tariff-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  // .tariff-popup__zone
+  &__zone {
+    color: rgb(60, 60, 87);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+    
+  }
+
+  // .tariff-popup__wrapper
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  // .tariff-popup__name
+  &__name {
+    color: rgb(60, 60, 87);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  // .tariff-popup__data
+  &__data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // .tariff-popup__price
+  &__price {
+    color: rgb(60, 60, 87);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+
+    span {
+      color: rgb(240, 63, 39);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 120%;
+    }
+  }
+
+  // .tariff-popup__speed
+  &__speed {
+    color: rgb(60, 60, 87);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  // .tariff-popup__link
+  &__link {
+    color: rgb(240, 63, 39) !important;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+}

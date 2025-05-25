@@ -90,8 +90,11 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"@turf/turf": "^7.2.0",
 		"gulp-cheerio": "^1.0.0",
 		"isotope-layout": "^3.0.6",
+		"leaflet": "^1.9.4",
+		"leaflet.fullscreen": "^4.0.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"simplebar": "latest"

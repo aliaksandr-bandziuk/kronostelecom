@@ -11,6 +11,10 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 // @import "fonts/fonts";
 
+// import leaflet styles
+@import "~leaflet/dist/leaflet.css";
+@import "~leaflet.fullscreen/Control.FullScreen.css";
+
 // Підключення іконкових шрифтів ==============================================================================================================================================================================================================================================================================
 // Підключити, якщо є файл іконкового шрифту
 // @import "fonts/icons";
@@ -172,6 +176,7 @@ body {
 @import "header";
 @import "section-hero";
 @import "section-benefits";
+@import "section-coverage";
 @import "footer";
 
 // Підключення стилів окремих сторінок

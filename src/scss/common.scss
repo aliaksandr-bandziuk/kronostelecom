@@ -25,6 +25,10 @@
 }
 
 .mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-20-50 {
   // 20 to 50 px
   margin-bottom: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
 }
