@@ -163,12 +163,31 @@ export function initCoverageMap() {
   }
 
   // Формирует HTML попапа после поиска
-  function buildSearchPopup(zone) {
-    if (!zone) {
-      return `<div class="tariff-popup">
-                <p>Address is outside coverage.</p>
-              </div>`;
+  function buildSearchPopup(zone, query = "", type = "zone") {
+    if (type === "not_found") {
+      return `
+        <div class="tariff-popup">
+          <p class="tariff-popup__zone">We couldn't find an address:<br>${query}</p>
+          <p class="p-standard">Please check the accuracy of your details or <a href="/#contacts">contact us</a>.</p>
+          <div class="header-button">
+						<button data-popup="#popup-phone" class="header-popup-button">Leave a request</button>
+					</div>
+        </div>
+      `;
     }
+
+    if (type === "outside") {
+      return `
+        <div class="tariff-popup">
+          <p class="p-standard">We don’t have a network<br> here yet</p>
+          <div class="header-button">
+						<button data-popup="#popup-phone" class="header-popup-button">Leave a request</button>
+					</div>
+        </div>
+      `;
+    }
+
+    // type === "zone" (по умолчанию)
     return `
       <div class="tariff-popup">
         <p class="tariff-popup__zone">${zone.name}</p>
@@ -216,7 +235,17 @@ export function initCoverageMap() {
       );
       const data = await res.json();
       if (!data.length) {
-        alert("Address not found");
+        const center = map.getCenter();
+        const html = buildSearchPopup(null, q, "not_found");
+        L.popup({
+          closeOnClick: true,
+          autoClose: true,
+          autoPan: true,
+          autoPanPadding: [50, 50]
+        })
+          .setLatLng(center)
+          .setContent(html)
+          .openOn(map);
         return;
       }
       const { lat, lon } = data[0];
@@ -241,7 +270,7 @@ export function initCoverageMap() {
       // Летим к точке и открываем попап
       map.flyTo([+lat, +lon], 14, { animate: true });
       map.once("moveend", () => {
-        const html = buildSearchPopup(found?.zone);
+        const html = buildSearchPopup(found?.zone, q, found ? "zone" : "outside");
         L.popup({
           closeOnClick: true,
           autoClose: true,
