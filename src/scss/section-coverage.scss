@@ -1,5 +1,8 @@
+.coverage {
+  margin-bottom: $mbStandard;
+}
+
 .coverage-form {
-  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -93,6 +96,7 @@
   border-radius: 20px;
   overflow: hidden;
   margin-top: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
+  margin-bottom: $mbStandard;
 }
 
 .map-coverage {
@@ -302,6 +306,83 @@
       width: 100%;
       @include primaryHover;
       color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.coverage-description {
+  border-radius: 20px;
+  background: rgb(0, 32, 91);
+  overflow: hidden;
+  padding: 40px 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 50px 35px;
+    height: 100%;
+  }
+
+  &__wrapper {
+    max-width: 515px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  // .coverage-description__title
+  &__title {
+    color: rgb(255, 255, 255);
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: clamp(1.25rem, 0.344rem + 3.62vw, 3.063rem);
+  }
+
+  // .coverage-description__text
+  &__text {
+    color: rgb(255, 255, 255);
+    font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
+    font-weight: 400;
+    line-height: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+    // margin-bottom: 50px;
+  }
+
+  // .coverage-description__button
+  &__button {
+    border-radius: 100px;
+    padding: 20px;
+    @include secondaryHover;
+    background: rgb(240, 63, 39);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    
+    @media screen and (min-width: 768px) {
+      // width: auto;
+      max-width: 200px;
+    }
+  }
+}
+
+
+.coverage-image {
+  border-radius: 20px;
+  overflow: hidden;
+  
+  img {
+    aspect-ratio: 335/350;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+
+    @media screen and (min-width: 768px) {
+      aspect-ratio: 668/400;
+    }
+
+    @media screen and (min-width: 980px) {
+      aspect-ratio: 670/500;
     }
   }
 }
