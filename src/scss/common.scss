@@ -86,3 +86,14 @@
     flex: 0 1 50% // 50% width minus gap    
   }
 }
+
+summary {
+  list-style: none; /* Убирает маркеры списка */
+  appearance: none; /* Убирает стандартные стили */
+  -webkit-appearance: none; /* Убирает стандартные стили для WebKit-браузеров */
+  display: block; /* Устанавливает отображение блока */
+}
+
+details summary::-webkit-details-marker {
+  display: none; /* Убирает стандартный маркер списка в Safari */
+}

@@ -2,10 +2,6 @@
   position: relative;
   margin-bottom: $mbStandard;
 
-  // .offer__wrapper
-  &__wrapper {
-  }
-
   // .offer__image
   &__image {
     position: relative;
@@ -57,7 +53,7 @@
 
   // .offer-content__text
   &__text {
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

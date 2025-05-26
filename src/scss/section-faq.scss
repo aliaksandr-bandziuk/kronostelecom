@@ -1,0 +1,133 @@
+.faq {
+  margin-bottom: $mbStandard;
+}
+
+.faq-bg-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  @media screen and (max-width: 768px) {
+    left: -95%;
+    opacity: 0.7;
+  }
+}
+
+.faq-bg-2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.faq-bg-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.faq-bg-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    right: -70%;
+    // opacity: 0.5;
+  }
+
+}
+
+.faq__content {
+}
+
+.accordion__item {
+  // border-bottom: 1px solid #ABB8FF;
+  // background-color: #fff;
+}
+
+.accordion__item--simple {
+  
+}
+
+.accordion__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 30px 0;
+  cursor: pointer;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    align-items: start;
+  }
+  
+}
+
+.accordion-data {
+  // display: grid;
+  // grid-column-gap: 40px;
+  // grid-template-columns: 46px 1fr;
+  // align-items: center;
+  // height: auto;
+  // white-space: normal;
+
+  // @media screen and (max-width: 768px) {
+  //   grid-template-columns: 1fr;
+  //   grid-template-rows: 1fr 1fr;
+  // }
+}
+
+.accordion-data--simple {
+  
+}
+
+.accordion__item--body {
+  white-space: normal;
+}
+
+.accordion-body--simple {
+  padding-bottom: 16px;
+}
+
+.faq-number {
+  color: #788DFF;
+  font-size: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+  font-style: normal;
+  font-weight: 500;
+}
+.faq-title {
+  color: rgb(60, 60, 87);
+  font-size: clamp(1.125rem, 0.938rem + 0.75vw, 1.5rem);
+  font-weight: 700;
+  line-height: 120%;
+  transition: all 0.3s ease;
+}
+.faq__text {
+  color: rgb(60, 60, 87);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  max-width: 700px;
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotated {
+  transform: rotate(-90deg);
+}

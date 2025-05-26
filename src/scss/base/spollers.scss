@@ -12,83 +12,83 @@
 }
 // Заголовок спойлера
 .spollers__title {
+	background-color: #fff;
 	width: 100%;
 	cursor: default;
 	text-align: left;
-	border: 1px solid #eee;
+	// border: 1px solid #eee;
 	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
+	// border-radius: 20px 20px 0 0;
+	border-radius: 20px;
 	position: relative;
 	list-style: none;
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
 	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
-	}
+	// ._spoller-init & {
+	// 	cursor: pointer;
+	// 	&::before,
+	// 	&::after {
+	// 		content: "";
+	// 		position: absolute;
+	// 		right: 10px;
+	// 		top: 50%;
+	// 		background-color: #000;
+	// 		height: 2px;
+	// 		width: 15px;
+	// 		transition: transform 0.5s ease 0s;
+	// 	}
+	// 	&::before {
+	// 		transform: translate(-75%, -50%) rotate(40deg);
+	// 	}
+	// 	&::after {
+	// 		transform: translate(0, -50%) rotate(-40deg);
+	// 	}
+	// 	&._spoller-active {
+	// 		&::before {
+	// 			transform: translateX(-75%) rotate(-40deg);
+	// 		}
+	// 		&::after {
+	// 			transform: rotate(40deg);
+	// 		}
+	// 	}
+	// }
 }
+
+.spollers__title::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+	color: gb(60, 60, 87);
+  line-height: 1;
+  transition: transform 0.3s, content 0.3s;
+}
+
+/* при раскрытом details меняем на минус */
+.spollers__item[open] .spollers__title::after {
+  content: '−';
+	color: rgb(240, 63, 39);
+  // transform: translateY(-50%) rotate(180deg);
+}
+
+.spollers__item[open] .faq-title {
+	color: rgb(240, 63, 39);
+  // transform: translateY(-50%) rotate(180deg);
+}
+
+.spollers__item[open] .spollers__title {
+  border-bottom-left-radius: 0;        /* убрать низ у открытого */
+  border-bottom-right-radius: 0;
+}
+
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+	// padding: toRem(20);
+	padding: 0 20px 20px 20px;
+	border-radius: 0 0 20px 20px;
+	background-color: #fff;
 }
