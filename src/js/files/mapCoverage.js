@@ -3,6 +3,9 @@ import * as turf from "@turf/turf";
 import "leaflet.fullscreen";
 import customPin from '../../img/pin-map.png';
 
+// import 'leaflet/dist/leaflet.css';
+// import 'leaflet.fullscreen/Control.FullScreen.css';
+
 // Ваш кастомный маркер
 const customIcon = L.icon({
   iconUrl: customPin,
