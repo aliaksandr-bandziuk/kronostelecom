@@ -171,3 +171,142 @@ details summary::-webkit-details-marker {
 //   border-radius: 50%;
 //   color: #313131;
 // }
+
+// == Blog post styles == //
+.container-blogpost {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.blogpost-date {
+  color: rgb(164, 164, 164);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.p-blogpost {
+  color: rgb(60, 60, 87);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.h2-blogpost {
+  color: rgb(60, 60, 87);
+  font-size: clamp(1.125rem, 0.938rem + 0.75vw, 1.5rem);
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.blogpost-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.blog-offer {
+  padding: 35px 20px;
+  border-radius: 20px;
+  background: rgb(0, 32, 91);
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    padding: 35px;
+  }
+
+  // .blog-offer__content
+  &__content {
+    margin-bottom: clamp(2.188rem, 2.031rem + 0.63vw, 2.5rem);
+    
+    h3 {
+      color: rgb(255, 255, 255);
+      font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+      font-weight: 700;
+      line-height: 120%;
+      margin-bottom: 20px;
+      max-width: 830px;
+    }
+
+    p {
+      color: rgb(255, 255, 255);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+      max-width: 615px;
+    }
+  }
+
+  // .blog-offer__button
+  &__button {
+    @include secondaryHover;
+    border-radius: 100px;
+    padding: 13px 48px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 140%;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      max-width: 250px;
+      width: fit-content;
+    }
+  }
+}
+
+.blogpost-quote {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  &__content {
+    background: rgb(0, 32, 91);
+    padding: 35px 20px;
+    color: rgb(255, 255, 255);
+
+    @media screen and (min-width: 768px) {
+      padding: 35px;
+      flex: 1 0 55%;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__img {
+    flex: 1 0 45%;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+
+
+// == Blog post styles == //
