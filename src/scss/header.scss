@@ -1,4 +1,4 @@
-.header {
+.header, .header-alt {
   padding: 20px 0;
   position: fixed;
   top: 0;
@@ -12,7 +12,7 @@
   background-color: rgb(253, 248, 237);
 }
 
-.header-scrolled .menu__link, .header-scrolled .header-button__tel {
+.header-scrolled .menu__link {
   
   @media screen and (min-width: 1220px) {
     color: rgb(60, 60, 87);
@@ -26,6 +26,13 @@
   }
 }
 
+.header-scrolled .header-button__tel {
+  
+  @media screen and (min-width: 768px) {
+    color: rgb(60, 60, 87);
+  }
+}
+
 .header-scrolled .menu__arrow {
   
   @media screen and (min-width: 1220px) {
@@ -36,6 +43,55 @@
 }
 
 .header-scrolled .icon-menu {
+  span,
+  &::before,
+  &::after {
+    background-color: rgb(60, 60, 87);
+  }
+
+  .menu-open & {
+    &::before,
+    &::after {
+      background-color: #fff;
+    }
+  }
+}
+
+.header-alt {
+  background-color: rgb(253, 248, 237);
+}
+
+.header-alt .menu__link {
+  
+  @media screen and (min-width: 1220px) {
+    color: rgb(60, 60, 87);
+  }
+
+  @media screen and (min-width: 768px) {
+			
+    &:hover {
+      color: rgb(240, 63, 39);
+    }
+  }
+}
+
+.header-alt .header-button__tel {
+  
+  @media screen and (min-width: 768px) {
+    color: rgb(60, 60, 87);
+  }
+}
+
+.header-alt .menu__arrow {
+  
+  @media screen and (min-width: 1220px) {
+    path {
+      stroke: rgb(60, 60, 87);
+    }
+  }
+}
+
+.header-alt .icon-menu {
   span,
   &::before,
   &::after {
