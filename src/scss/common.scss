@@ -6,6 +6,13 @@
   text-transform: uppercase;
 }
 
+.h1-standard {
+  color: rgb(240, 63, 39);
+  font-size: clamp(1.5rem, 0.688rem + 3.25vw, 3.125rem);
+  font-weight: 700;
+  line-height: 120%;
+}
+
 .h2-standard {
   color: rgb(240, 63, 39);
   font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
@@ -105,3 +112,55 @@ summary {
 details summary::-webkit-details-marker {
   display: none; /* Убирает стандартный маркер списка в Safari */
 }
+
+.pagination-buttons {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination-buttons span {
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  padding: 10px;
+  color: rgb(60, 60, 87);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+
+    &:hover {
+      background: rgb(240, 63, 39);
+      color: rgb(255, 255, 255);
+    }
+    
+  }
+}
+
+.pagination-next, .pagination-prev {
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-next {
+  rotate: 180deg;
+}
+
+// .pagination-buttons a:not(.prev):not(.next) {
+//   padding: 8px 14px;
+//   font-size: 16px;
+//   border: 1px solid #0768F0;
+//   border-radius: 50%;
+//   color: #313131;
+// }
