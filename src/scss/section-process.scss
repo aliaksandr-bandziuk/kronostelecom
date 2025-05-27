@@ -7,16 +7,24 @@
     flex-direction: column;
     gap: clamp(3.125rem, 2.5rem + 2.5vw, 4.375rem)
   }
+
+  &__wrapper .flex-block:nth-child(even) {
+    
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
+  }
 }
 .content-process {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   gap: 20px;
   max-width: 600px;
 
   @media screen and (min-width: 768px) {
-    align-items: start;
+    // align-items: start;
   }
 
   // .content-process__title
@@ -25,7 +33,10 @@
     font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
     font-weight: 700;
     line-height: 120%;
-    max-width: 420px;
+    
+    @media screen and (min-width: 768px) {
+      max-width: 420px;
+    }
   }
 
   // .content-process__text

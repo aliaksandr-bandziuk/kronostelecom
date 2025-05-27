@@ -46,7 +46,6 @@
 .flex-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   height: 100%;
   justify-content: space-between;
@@ -60,6 +59,7 @@
   // Для десктопов
   @media screen and (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
   }
 }
 

@@ -28,11 +28,15 @@
       aspect-ratio: 6/10;
 
       @media screen and (min-width: 450px) {
-        aspect-ratio: 685/395;
+        aspect-ratio: 10/7;
       }
 
       @media screen and (min-width: 768px) {
-        aspect-ratio: 10/4;
+        aspect-ratio: 10/5;
+      }
+
+      @media screen and (min-width: 1024px) {
+        aspect-ratio: 1360/500;
       }
     }
   }
@@ -40,7 +44,7 @@
 .offer-content {
   width: 100%;
   margin: 0 auto;
-  padding-inline: clamp(1.25rem, 0.625rem + 2.5vw, 2.5rem);
+  padding-inline: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
