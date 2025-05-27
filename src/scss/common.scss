@@ -6,6 +6,13 @@
   text-transform: uppercase;
 }
 
+.h1-superbig {
+  color: rgb(240, 63, 39);
+  font-size: clamp(4rem, 2.875rem + 4.5vw, 6.25rem);
+  font-weight: 700;
+  line-height: 120%;
+}
+
 .h1-standard {
   color: rgb(240, 63, 39);
   font-size: clamp(1.5rem, 0.688rem + 3.25vw, 3.125rem);
