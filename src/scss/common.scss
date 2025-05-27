@@ -33,6 +33,10 @@
   margin-bottom: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
 }
 
+.mb-50-70 {
+  margin-bottom: clamp(3.125rem, 0.313rem + 6.25vw, 4.375rem);
+}
+
 .content-standard {
   text-align: center;
   max-width: 750px;

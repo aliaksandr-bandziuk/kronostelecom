@@ -2,53 +2,18 @@
   margin-bottom: $mbStandard;
 }
 
-.faq-bg-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.h3-faq {
+  color: rgb(240, 63, 39);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: clamp(1.875rem, 1.813rem + 0.25vw, 2rem);
 
-  @media screen and (max-width: 768px) {
-    left: -95%;
-    opacity: 0.7;
+  @media screen and (min-width: 768px) {
+    text-align-last: left;
+    margin-left: 35px;
   }
-}
-
-.faq-bg-2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.faq-bg-3 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.faq-bg-4 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    right: -70%;
-    // opacity: 0.5;
-  }
-
 }
 
 .faq__content {
@@ -67,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0 30px 0;
+  padding: 30px 20px;
   cursor: pointer;
   width: 100%;
 
@@ -115,6 +80,10 @@
   font-weight: 700;
   line-height: 120%;
   transition: all 0.3s ease;
+
+  @media screen and (max-width: 400px) {
+    max-width: 90%
+  }
 }
 .faq__text {
   color: rgb(60, 60, 87);

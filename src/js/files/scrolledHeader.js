@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const origSrc = logo.getAttribute('src');
   const altSrc = '../img/logo-alt.png';
-  const threshold = 150;
+  const threshold = 100;
 
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY > threshold;
