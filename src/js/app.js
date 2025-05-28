@@ -259,6 +259,7 @@ import "./libs/dynamic_adapt.js";
 /* Підключаємо файли зі своїм кодом */
 import "./files/script.js";
 import "./files/rotateArrow.js";
+import "./files/scrollToSection.js";
 import "./files/mapCoverage.js";
 import "./files/scrolledHeader.js";
 //============================================================================================================================================================================================================================================
