@@ -9,7 +9,8 @@ body::after {
 	opacity: 0;
 	transition: opacity 0.8s ease 0s;
 	pointer-events: none;
-	z-index: 149;
+	z-index: 1001;
+	backdrop-filter: blur(5px);
 }
 .popup-show body::after {
 	opacity: 1;
@@ -26,7 +27,7 @@ body::after {
 	pointer-events: none;
 }
 .popup_show {
-	z-index: 150;
+	z-index: 1002;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
@@ -50,12 +51,118 @@ body::after {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
+	background-color: rgb(255, 255, 255);
+	padding: 25px 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: 980px;
 	border-radius: 20px;
+	position: relative;
+
+	@media screen and (min-width: 768px) {
+		padding: 30px 40px;
+		
+	}
+
 	.lock & {
 		visibility: visible;
 	}
+}
+
+.popup__close {
+	position: absolute;
+	top: 17px;
+	right: 17px;
+}
+
+.popup__title {
+	color: rgb(240, 63, 39);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 120%;
+	max-width: 85%;
+
+	@media screen and (min-width: 768px) {
+		font-size: 24px;
+		max-width: unset;
+	}
+}
+
+.popup-full__title {
+	color: rgb(240, 63, 39);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 120%;
+	max-width: 85%;
+	margin-bottom: clamp(0.625rem, 0.313rem + 1.25vw, 1.25rem);
+
+	@media screen and (min-width: 768px) {
+		font-size: 40px;
+		max-width: unset;
+	}
+
+	@media screen and (min-width: 1024px) {
+		font-size: 50px;
+	}
+}
+
+.popup-full__subtitle {
+	color: rgb(60, 60, 87);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 120%;
+}
+
+.popup-full__image {
+	border-radius: 20px;
+	overflow: hidden;
+	display: none;
+
+	@media screen and (min-width: 980px) {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		aspect-ratio: 350/200;
+		object-fit: cover;
+	}
+}
+
+.popup .main-form {
+	padding: 0;
+}
+
+.popup .main-form .main-form__btn {
+	width: 100%;
+}
+
+.popup .main-form .input-container {
+	margin-bottom: 15px;
+}
+
+.popup .main-form .main-form__checkbox {
+	margin: 20px 0;
+}
+
+.popup-phone__content {
+	max-width: 470px;
+}
+
+.popup-full__wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(1.25rem, 0.313rem + 3.75vw, 3.125rem);
+
+	@media screen and (min-width: 980px) {
+		grid-template-columns: 0.8fr 1fr;
+		
+	}
+}
+
+.popup-full__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
