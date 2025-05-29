@@ -1,7 +1,7 @@
 import L from "leaflet";
 import * as turf from "@turf/turf";
 import "leaflet.fullscreen";
-import customPin from "../../img/pin-map.png";
+import customPin from "img/pin-map.png";
 
 // 1) Рендерим три “заглушечных” тарифа без цен
 function renderDefaultTariffs() {
@@ -332,7 +332,7 @@ export function initCoverageMap() {
   const mc = map.getContainer();
   if (fsBtn && !fsBtn.querySelector("svg")) {
     fsBtn.innerHTML = `
-      <img src="/img/leaflet-fullscreen.png" alt="fullscreen" style="width:20px;height:20px">
+      <img src="img/leaflet-fullscreen.png" alt="fullscreen" style="width:20px;height:20px">
     `;
   }
   if (fsBtn && mc) {
