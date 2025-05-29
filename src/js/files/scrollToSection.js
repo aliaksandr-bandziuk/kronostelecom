@@ -1,21 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const scrollButtons = document.querySelectorAll('[data-scroll-to]');
-  if (!scrollButtons.length) return;
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-scroll-to]');
+    if (!btn) return;
 
-  scrollButtons.forEach(button => {
-    button.addEventListener('click', event => {
-      const targetSelector = button.getAttribute('data-scroll-to');
-      const targetElement = document.querySelector(targetSelector);
+    const selector = btn.getAttribute('data-scroll-to');
+    const target = document.querySelector(selector);
+    if (!target) return;
 
-      if (targetElement) {
-        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - 100;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
+    const top = target.getBoundingClientRect().top + pageYOffset - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
   });
 });

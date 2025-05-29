@@ -1,7 +1,7 @@
 import L from "leaflet";
 import * as turf from "@turf/turf";
 import "leaflet.fullscreen";
-import customPin from "img/pin-map.png";
+import customPin from "../../img/pin-map.png";
 
 // 1) Рендерим три “заглушечных” тарифа без цен
 function renderDefaultTariffs() {
@@ -385,10 +385,9 @@ export function initCoverageMap() {
             opt => `
                   <div class="tarif-options__item">
                     <span class="tarif-options__icon">
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="20" height="20" rx="10" fill="#F03F27"/>
-                        <path d="M15.5309 5.63315...Z" fill="white" stroke="white" stroke-width="0.25"/>
+                        <path d="M15.5309 5.63315L15.5296 5.63433L7.88778 12.371L4.47078 9.3587C4.47071 9.35864 4.47064 9.35858 4.47056 9.35851C4.37155 9.27061 4.23682 9.22117 4.09629 9.22117C3.95572 9.22117 3.82098 9.27063 3.72196 9.35856C3.72191 9.35861 3.72186 9.35866 3.7218 9.3587L3.15601 9.85747C3.15595 9.85754 3.15587 9.8576 3.1558 9.85767C3.05608 9.94495 3 10.0637 3 10.1876C3 10.3115 3.05611 10.4303 3.15587 10.5176C3.15592 10.5176 3.15596 10.5177 3.15601 10.5177L7.51733 14.3625C7.51741 14.3626 7.5175 14.3626 7.51758 14.3626C7.61659 14.4505 7.75131 14.5 7.89183 14.5C8.03235 14.5 8.16705 14.4505 8.26606 14.3626C8.26614 14.3626 8.26623 14.3626 8.26631 14.3625L16.844 6.8008C16.844 6.80077 16.8441 6.80075 16.8441 6.80073C16.9439 6.71343 17 6.59462 17 6.47067C17 6.34689 16.944 6.22823 16.8445 6.14096C16.8443 6.14083 16.8442 6.14069 16.844 6.14054L16.2785 5.63487V5.63485L16.2765 5.63315C16.0687 5.45562 15.7386 5.45562 15.5309 5.63315Z" fill="white" stroke="white" stroke-width="0.25"/>
                       </svg>
                     </span>
                     <span class="tarif-options__text">${opt}</span>
@@ -402,17 +401,17 @@ export function initCoverageMap() {
             <div class="tarif-conversion__price">
               ${t.isOnSale
           ? `<div class="tarif-conversion__price--action price-action">
-                       <p class="price-action__new">${t.newPrice} <span>/mo.</span></p>
-                       <p class="price-action__old">${t.oldPrice} <span>/mo.</span></p>
-                     </div>`
+              <p class="price-action__new">${t.newPrice} <span>/mo.</span></p>
+              <p class="price-action__old">${t.oldPrice} <span>/mo.</span></p>
+            </div>`
           : `<div class="tarif-conversion__price--standard">
-                       <p>${t.price} <span>/mo.</span></p>
-                     </div>`
+              <p>${t.price} <span>/mo.</span></p>
+            </div>`
         }
             </div>
             <div class="tarif-conversion__button">
-              <button class="hero-content__cta" data-scroll-to="#tarifs">
-                Check internet availability
+              <button class="hero-content__cta" data-popup="#popup-full">
+                Choose ${t.name}
               </button>
             </div>
           </div>
@@ -435,7 +434,7 @@ export function initCoverageMap() {
       popupLatLng = [center[1], center[0] + 0.01];
     }
     const html = `
-      <div class="tariff-popup">
+      <div class="tariff-popup" style="width: 243px;">
         <p class="tariff-popup__zone">${zone.name}</p>
         <div class="tariff-popup__items">
           ${zone.tariffs
@@ -496,7 +495,10 @@ export function initCoverageMap() {
         .setContent(`
           <div class="tariff-popup">
             <p><strong>We couldn't find an address:</strong><br><em>${q}</em></p>
-            <p>Please check the accuracy of your details or <a href="/#contacts">contact us</a>.</p>
+            <p>Please check the accuracy of your details or contact us.</p>
+            <div class="header-button">
+                <button data-popup="#popup-phone" class="header-popup-button">Leave a request</button>
+              </div>
           </div>
         `)
         .openOn(map);
@@ -543,7 +545,9 @@ export function initCoverageMap() {
           .setContent(`
             <div class="tariff-popup">
               <p><strong>We don’t have a network here yet</strong></p>
-              <p>We’re expanding — <a href="/#contacts">leave a request</a>.</p>
+              <div class="header-button">
+                <button data-popup="#popup-phone" class="header-popup-button">Leave a request</button>
+              </div>
             </div>
           `)
           .openOn(map);
