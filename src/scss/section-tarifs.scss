@@ -1,0 +1,224 @@
+.tarifs {
+  margin-bottom: $mbStandard;
+
+  // .tarifs__items
+  &__items {
+    display: grid;
+    gap: 20px;                            // расстояние между карточками
+    grid-template-columns: 1fr;// по 3 колонки на десктопе
+    grid-auto-rows: 1fr;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // по 3 колонки на десктопе
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr); // по 3 колонки на десктопе
+    }
+  }
+}
+
+.tarif {
+  border-radius: 30px;
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 30px;
+  border: 1px solid #fff;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    padding: 50px 30px;
+  }
+}
+
+.tarif--action {
+  border: 1px solid rgb(240, 63, 39);
+}
+
+.tarif-sticker {
+  border-radius: 100px;
+  background: rgb(240, 63, 39);
+  padding: 6px 30px;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  width: fit-content;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  transform: rotate(5deg);
+}
+
+.tarif-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  // .tarif-content__start
+  &__start {
+
+    h3 {
+      color: rgb(60, 60, 87);
+      font-size: clamp(1.875rem, 1.563rem + 1.25vw, 2.5rem);
+      font-weight: 700;
+      line-height: 37px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: rgb(60, 60, 87);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  // .tarif-content__medium
+  &__medium {
+    p:not(.tarif-content__strong) {
+      color: rgb(60, 60, 87);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  // .tarif-content__strong
+  &__strong {
+    color: rgb(60, 60, 87);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+
+  // .tarif-content__end
+  &__end {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    p {
+      color: rgb(60, 60, 87);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+}
+.tarif-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  // .tarif-options__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  // .tarif-options__icon
+  &__icon {
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  // .tarif-options__text
+  &__text {
+    color: rgb(60, 60, 87);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+.tarif-conversion {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+
+  // .tarif-conversion__price
+  &__price {
+  }
+
+  // .tarif-conversion__price--standard
+  &__price--standard {
+    color: rgb(60, 60, 87);
+    font-size: 50px;
+    font-weight: 700;
+
+    span {
+      color: rgb(60, 60, 87);
+      font-size: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+      font-weight: 500;
+    }
+  }
+
+  // .tarif-conversion__button
+  &__button {
+    width: 100%;
+    
+    button {
+      width: 100%;
+    }
+  }
+}
+.hero-content {
+
+  // .hero-content__cta
+  &__cta {
+  }
+}
+
+.price-action {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(1.25rem, 0.781rem + 1.88vw, 2.188rem);
+
+  &__new {
+    color: rgb(240, 63, 39);
+    font-size: 50px;
+    font-weight: 700;
+
+    span {
+      font-size: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+      font-weight: 500;
+    }
+  }
+
+  &__old {
+    position: relative;
+    color: rgb(164, 164, 164);
+    font-size: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    font-weight: 700;
+
+    span {
+      font-size: clamp(1.25rem, 1.125rem + 0.5vw, 1.5rem);
+      font-weight: 500;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgb(164, 164, 164);
+      transform: rotate(10deg);
+      top: 50%;
+      // transform-origin: left center;
+    }
+  }
+
+}

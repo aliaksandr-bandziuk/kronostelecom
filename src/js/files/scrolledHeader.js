@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!header || !logo) return;
 
   const origSrc = logo.getAttribute('src');
-  const altSrc = '../img/logo-alt.png';
+  const altSrc = 'img/logo-alt.webp';
   const threshold = 100;
 
   window.addEventListener('scroll', () => {
