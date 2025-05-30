@@ -185,3 +185,30 @@
 		}
 	}
 }
+
+.menu__overlay {
+	@media (min-width: 1220px) {
+		display: none;
+	}
+  @media (max-width: 1220px) {
+		display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100vh;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3); // можно и без цвета, только blur
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+  }
+}
+
+.menu-open .menu__overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
