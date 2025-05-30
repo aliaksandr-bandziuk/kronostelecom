@@ -262,4 +262,5 @@ import "./files/rotateArrow.js";
 import "./files/scrollToSection.js";
 import "./files/mapCoverage.js";
 import "./files/scrolledHeader.js";
+import "./files/formValidation.js";
 //============================================================================================================================================================================================================================================

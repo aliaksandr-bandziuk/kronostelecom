@@ -205,15 +205,18 @@
 
 .leaflet-popup-content p {
   margin: unset !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .leaflet-container a {
-  color: unset !important;
+  // color: unset !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .leaflet-popup-content-wrapper {
   padding: 30px !important;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4) !important;
+  // box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25) !important;
 }
 
 .leaflet-popup-content {
@@ -221,9 +224,11 @@
 }
 
 .leaflet-container a.leaflet-popup-close-button {
-  top: 5px !important;
-  right: 10px !important;
-  font-size: 30px !important;
+  top: 13px !important;
+  right: 13px !important;
+  font-size: 50px !important;
+  font-weight: 200 !important;
+  color: #a4a4a4 !important;
 }
 
 #tariff-info {
@@ -354,9 +359,8 @@
   // .coverage-description__button
   &__button {
     border-radius: 100px;
-    padding: 20px;
+    padding: 10px;
     @include secondaryHover;
-    background: rgb(240, 63, 39);
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
